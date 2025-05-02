@@ -1,0 +1,33 @@
+
+/**
+ * Base class for the BoxLang AST Nodes
+ */
+class {
+
+	private function visitChildren( node ) {
+		for ( var child in node.getChildren() ) {
+			visit( child );
+		}
+	}
+
+	function visit( node ) {
+		if ( isNull( node ) ) {
+			return;
+		}
+		var className = node.getClass().getSimpleName();
+		var methodName = "visit" & className;
+		this[ methodName ]( node );
+	}
+
+	function onMissingMethod( methodName, args ) {
+		if( methodName.lcase().startsWith( "visit" ) ) {
+			if( args.isEmpty() || !isInstanceOf( args[1], "BoxNode" ) ) {
+				throw( methodName & " must be passed a BoxNode" );
+			}
+		} else {
+			throw( "Unknown method: " & methodName );
+		}
+		visitChildren( args[1] );
+	}
+
+}

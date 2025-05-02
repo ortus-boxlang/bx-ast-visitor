@@ -1,0 +1,12 @@
+import java.io.File;
+import ortus.boxlang.compiler.parser.Parser;
+
+class {
+	function main() {
+		result = new Parser().parse( new File( GetCurrentTemplatePath() ) )
+		println( result.getIssues())
+		//println( result.getRoot().toJSON())
+		visitor = new MyVisitor();
+		visitor.visit( result.getRoot() );
+	}
+}

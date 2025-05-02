@@ -1,0 +1,8 @@
+class extends="bxmodules.bxASTVisitor.models.VoidBoxVisitor" {
+	
+	function visitBoxFunctionInvocation(node) {
+		println( "Function Name: " & node.getName())
+		visitChildren(node);
+	}
+	
+}

@@ -1,0 +1,6 @@
+{
+	"slug": "bx-ast-visitor",
+	"name": "BoxLang AST Visitor",
+	"version": "0.0.0",
+	"type": "boxlang-modules"
+}
