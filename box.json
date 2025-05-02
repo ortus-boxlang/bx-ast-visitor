@@ -1,6 +1,10 @@
 {
-	"slug": "bx-ast-visitor",
-	"name": "BoxLang AST Visitor",
-	"version": "0.0.0",
-	"type": "boxlang-modules"
+    "slug":"bx-ast-visitor",
+    "name":"BoxLang AST Visitor",
+    "version":"1.0.0",
+    "type":"boxlang-modules",
+    "scripts":{
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    }
 }
