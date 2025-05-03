@@ -9,7 +9,7 @@ https://github.com/ortus-boxlang/BoxLang/tree/development/src/main/java/ortus/bo
 A void visitor does not return anything from each visitXXX() method, but it can gather information about the nodes or mutate them in place.  
 
 Example visitor classs
-``java
+```java
 class extends="bxmodules.bxASTVisitor.models.VoidBoxVisitor" {
 	
 	/**
